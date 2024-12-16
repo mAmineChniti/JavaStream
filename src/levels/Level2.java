@@ -1,8 +1,12 @@
 package levels;
 
+import models.Subject;
 import models.Teacher;
 import utils.Data;
 import models.Teacher;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Level2 {
@@ -14,7 +18,7 @@ public class Level2 {
         long nbr = teachers.stream().filter(teacher -> teacher.getName().toLowerCase().startsWith("s")).count();
 
         /* TO DO 2: Retourner la somme des salaires de tous les enseignants FLUTTER (hint: mapToInt) */
-        long sum = teachers.stream().filter(teacher -> teacher.getSpeciality().equals("FLUTTER")).mapToInt(Teacher::getSalary).sum();
+        long sum = teachers.stream().filter(teacher -> teacher.getSubject() == Subject.FLUTTER).mapToInt(Teacher::getSalary).sum();
 
         /* TO DO 3: Retourner la moyenne des salaires des enseignants dont le nom commence avec a */
         double average = teachers.stream().filter(teacher -> teacher.getName().toLowerCase().startsWith("a")).mapToInt(Teacher::getSalary).average().getAsDouble();
@@ -32,10 +36,10 @@ public class Level2 {
 
         /* TO DO 6: Afficher le premier enseignant UNITY le nom commence avec g avec 2 manières différentes */
         /*First way*/
-        teachers.stream().filter(teacher -> teacher.getSpeciality().equals("UNITY") && teacher.getName().toLowerCase().startsWith("g")).findFirst().ifPresent(System.out::println);
+        teachers.stream().filter(teacher -> teacher.getSubject() == Subject.UNITY && teacher.getName().toLowerCase().startsWith("g")).findFirst().ifPresent(System.out::println);
 
         /*Second way*/
-        teachers.stream().filter(teacher -> teacher.getSpeciality().equals("UNITY") && teacher.getName().toLowerCase().startsWith("g")).limit(1).forEach(System.out::println);
+        teachers.stream().filter(teacher -> teacher.getSubject() == Subject.UNITY && teacher.getName().toLowerCase().startsWith("g")).limit(1).forEach(System.out::println);
 
         /* TO DO 7: Afficher le deuxième enseignant dont le nom commence avec s */
         teachers.stream().filter(teacher -> teacher.getName().toLowerCase().startsWith("s")).skip(1).limit(1).forEach(System.out::println);
