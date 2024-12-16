@@ -2,8 +2,8 @@ package levels;
 
 import models.Teacher;
 import utils.Data;
+import models.Teacher;
 
-import java.util.List;
 
 public class Level2 {
 
@@ -11,7 +11,7 @@ public class Level2 {
         List<Teacher> teachers = Data.employees();
 
         /* TO DO 1: Retourner le nombre des enseignants dont le nom commence avec s */
-        long nbr = teachers.stream().filter(teacher -> teacher.getName().toLowerCase().startsWith("n")).count();
+        long nbr = teachers.stream().filter(teacher -> teacher.getName().toLowerCase().startsWith("s")).count();
 
         /* TO DO 2: Retourner la somme des salaires de tous les enseignants Flutter (hint: mapToInt) */
         long sum = teachers.stream().filter(teacher -> teacher.getSpeciality().equals("Flutter")).mapToInt(Teacher::getSalary).sum();

@@ -1,12 +1,13 @@
 package levels;
 
-import models.Teacher;
-import utils.Data;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import models.Teacher;
+import utils.Data;
+import models.Teacher;
+
 
 public class Level3 {
 
