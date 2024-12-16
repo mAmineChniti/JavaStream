@@ -36,10 +36,10 @@ public class Level2 {
 
         /* TO DO 6: Afficher le premier enseignant UNITY le nom commence avec g avec 2 manières différentes */
         /*First way*/
-        teachers.stream().filter(teacher -> teacher.getSubject() == Subject.UNITY && teacher.getName().toLowerCase().startsWith("g")).findFirst().ifPresent(System.out::println);
+        Teacher T = teachers.stream().filter(teacher -> teacher.getSubject() == Subject.UNITY && teacher.getName().toLowerCase().startsWith("g")).findFirst().get();
 
         /*Second way*/
-        teachers.stream().filter(teacher -> teacher.getSubject() == Subject.UNITY && teacher.getName().toLowerCase().startsWith("g")).limit(1).forEach(System.out::println);
+        Teacher T2 = teachers.stream().filter(teacher -> teacher.getSubject() == Subject.UNITY && teacher.getName().toLowerCase().startsWith("g")).limit(1).collect(Collectors.toList()).get(0);
 
         /* TO DO 7: Afficher le deuxième enseignant dont le nom commence avec s */
         teachers.stream().filter(teacher -> teacher.getName().toLowerCase().startsWith("s")).skip(1).limit(1).forEach(System.out::println);
