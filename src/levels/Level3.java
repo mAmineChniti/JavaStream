@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import models.Teacher;
 import utils.Data;
-import models.Teacher;
+import java.util.List;
 
 
 public class Level3 {
@@ -18,8 +18,8 @@ public class Level3 {
         /* TO DO 1: Retourner une chaine de caractère qui contient tous les noms des enseignants en majuscule separés par # */
         String names = teachers.stream().reduce("", (acc, teacher) -> acc + teacher.getName().toUpperCase() + "#", String::concat);
 
-        /* TO DO 2: Retourner une set d'enseignants Java dont le salaire > 80000 */
-        Set<Teacher> teachers1 = teachers.stream().filter(teacher -> teacher.getSalary() > 80000 && teacher.getSpeciality().equals("Java")).collect(Collectors.toSet());
+        /* TO DO 2: Retourner une set d'enseignants JAVA dont le salaire > 80000 */
+        Set<Teacher> teachers1 = teachers.stream().filter(teacher -> teacher.getSalary() > 80000 && teacher.getSpeciality().equals("JAVA")).collect(Collectors.toSet());
 
         /* TO DO 3: Retourner une TreeSet d'enseignants (tri par nom et en cas d'égalité tri par salaire) */
         TreeSet<Teacher> teachers2 = teachers.stream().collect(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Teacher::getName).thenComparing(Teacher::getSalary))));
