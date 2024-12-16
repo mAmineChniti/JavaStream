@@ -1,12 +1,12 @@
 package levels;
 
-import java.util.*;
-
+import java.util.List;
+import java.util.stream.Collectors;
 import models.Subject;
 import models.Teacher;
 import utils.Data;
-import java.util.List;
-import java.util.stream.Collectors;
+import models.Teacher;
+
 
 
 public class Level3 {
